@@ -5,4 +5,6 @@
 
 /* Declarations */
 int _printf(const char *format, ...);
+int print_c(char x);
+int _putchar(char c);
 #endif
