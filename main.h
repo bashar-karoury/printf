@@ -8,4 +8,5 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 void print_c(char x);
 void print_string(char *str);
+int print_division_mark(void);
 #endif
