@@ -3,6 +3,23 @@
 /* Header files */
 #include <stdarg.h>
 #include <stddef.h>
+/* Data types */
+
+typedef void (*printFunc)(va_list ag, int *p_n_c);
+
+/**
+* struct specifier - struct as data type to link specifier
+* with their handler files
+* @symbol: specifier character
+* @function: pointer function to be called if specifier appear after %
+*/
+struct specifier
+{
+	char symbol;
+	printFunc function;
+};
+
+typedef struct specifier specifier_t;
 
 /* Declarations */
 int _printf(const char *format, ...);

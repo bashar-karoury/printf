@@ -1,17 +1,11 @@
 #include "main.h"
 #include <stdio.h>
 
-typedef void (*printFunc)(va_list ag, int *p_n_c);
-
-typedef struct
-{
-	char symbol;
-	printFunc function;
-} specifier_t;
 
 
 static int print_until_specifier(const char **format, int *p_n_c);
-static void call_specifier_function(const char **format, va_list ag, int *p_n_c, char sp);
+static void call_specifier_function(const char **format, va_list ag,
+													int *p_n_c, char sp);
 /**
  * _printf - function that print data to STDOUT according to format
  * @format: null terminated string that contains text to be printed
@@ -49,7 +43,8 @@ int _printf(const char *format, ...)
  */
 
 
-static void call_specifier_function(const char **format, va_list ag, int *p_n_c, char sp)
+static void call_specifier_function(const char **format, va_list ag,
+int *p_n_c, char sp)
 {
 	int i = 0;
 	int specifier_found = 0;
@@ -57,7 +52,7 @@ static void call_specifier_function(const char **format, va_list ag, int *p_n_c,
 		{'c', printChar		},
 		{'i', printInt		},
 		{'s', printString	},
-		{'d', printInt	   	},
+		{'d', printInt		},
 		{'0', 0			}
 	};
 	if (sp == '\0')
