@@ -35,6 +35,7 @@ int _printf(const char *format, ...)
 	{
 		call_specifier_function(&format, ag, &(n_c), *(++format));
 	}
+	va_end(ag);
 	return (n_c);
 }
 
@@ -57,10 +58,10 @@ static void call_specifier_function(const char **format, va_list ag, int *p_n_c,
 		{'i', printInt		},
 		{'s', printString	},
 		{'d', printInt	   	},
-		{0, 0			}
+		{'0', 0			}
 	};
 
-	while (specifiers[i].symbol != 0)
+	while (specifiers[i].symbol != '0')
 	{
 		if (sp == specifiers[i].symbol)
 		{
