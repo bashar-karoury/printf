@@ -14,4 +14,5 @@ void printString(va_list ag, int *n_c);
 void printInt(va_list ag, int *p_n_c);
 void printChar(va_list ag, int *n_c);
 void printMod(va_list ag, int *n_c);
+void print_integer(int num);
 #endif
