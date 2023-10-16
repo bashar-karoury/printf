@@ -3,10 +3,11 @@
 
 typedef void (*printFunc)(va_list ag, int *p_n_c);
 
-typedef struct{
+typedef struct
+{
 	char symbol;
 	printFunc function;
-}specifier_t;
+} specifier_t;
 
 
 static int print_until_specifier(const char **format, int *p_n_c);
@@ -25,29 +26,38 @@ int _printf(const char *format, ...)
 {
 	va_list ag;
 	int n_c  = 0;
-	
-	if(format == NULL)
+
+	if (format == NULL)
 		return (-1);
 
 	va_start(ag, format);
-	while(print_until_specifier(&format, &(n_c)))
+	while (print_until_specifier(&format, &(n_c)))
 	{
 		call_specifier_function(&format, ag, &(n_c), *(++format));
 	}
 	return (n_c);
 }
 
+/**
+ * call_specifier_function - doc
+ * @format: doc
+ * @p_n_c: doc
+ * @ag: doc
+ * @sp: doc
+ * Return: doc
+ */
+
+
 static void call_specifier_function(const char **format, va_list ag, int *p_n_c, char sp)
 {
 	int i = 0;
 	int specifier_found = 0;
-	const specifier_t specifiers[] = 
-	{
+	const specifier_t specifiers[] = {
 		{'c', printChar		},
 		{'i', printInt		},
 		{'s', printString	},
 		{'d', printInt	   	},
-		{0	,0				}
+		{0, 0			}
 	};
 
 	while (specifiers[i].symbol != 0)
@@ -60,7 +70,7 @@ static void call_specifier_function(const char **format, va_list ag, int *p_n_c,
 		}
 		i++;
 	}
-	if(!(specifier_found))
+	if (!(specifier_found))
 	{
 		if (sp == '%')
 		{
@@ -76,12 +86,19 @@ static void call_specifier_function(const char **format, va_list ag, int *p_n_c,
 
 }
 
+/**
+ * print_until_specifier - doc
+ * @format: doc
+ * @p_n_c: doc
+ * Return: doc
+ */
+
 static int print_until_specifier(const char **format, int *p_n_c)
 {
-	while(**format != '%')
-	{	
-	 	if (**format == '\0')
-	 		return 0;
+	while (**format != '%')
+	{
+		if (**format == '\0')
+			return (0);
 		*(p_n_c) += print_c(**format);
 		(*format)++;
 	}

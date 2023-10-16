@@ -1,11 +1,15 @@
 #include "main.h"
 
-
+/**
+ * printChar - doc
+ * @ag: doc
+ * @n_c: doc
+ */
 
 void printChar(va_list ag, int *n_c)
 {
 	*n_c += print_c((char)va_arg(ag, int));
-	return ;
+	return (0);
 }
 
 /**

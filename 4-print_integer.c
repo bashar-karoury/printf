@@ -1,6 +1,11 @@
 #include "main.h"
 #include <stdlib.h>
 
+/**
+ * printInt - doc
+ * @ag: doc
+ * @n_c: doc
+ */
 
 void printInt(va_list ag, int *n_c)
 {
@@ -8,9 +13,9 @@ void printInt(va_list ag, int *n_c)
 }
 
 /**
- * print_integer - prints an givan integer
+ * print_Integer - prints an givan integer
  * @num: given int
- * return: void
+ * Return: integer length
  */
 
 int print_Integer(int num)
@@ -26,32 +31,27 @@ int print_Integer(int num)
 		_putchar('-');
 		x = -num;
 	}
-
 	if (num == 0)
 	{
 		_putchar('0');
 		return (0);
 	}
-
 	x = num;
 	temp = x;
-
 	while (temp != 0)
 	{
 		temp /= 10;
 		numDigits++;
 	}
 
-	digits = (char*)malloc((numDigits + 1) * sizeof(char));
+	digits = (char *)malloc((numDigits + 1) * sizeof(char));
 
 	for (i = numDigits - 1; i >= 0; i--)
 	{
 		digits[i] = '0' + (x % 10);
 		x /= 10;
 	}
-
 	digits[numDigits] = '\0';
-
 	for (i = 0; i < numDigits; i++)
 	{
 		_putchar(digits[i]);

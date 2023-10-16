@@ -1,9 +1,16 @@
 #include "main.h"
 #include <stddef.h>
 
+/**
+ * printString - doc
+ * @ag: doc
+ * @n_c: doc
+ */
+
 void printString(va_list ag, int *n_c)
-{	
+{
 	char *str = NULL;
+
 	str = va_arg(ag, char *);
 	if (str != NULL)
 	{
