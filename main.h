@@ -9,11 +9,8 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int print_c(char x);
 int print_string(char *str);
-int print_modulus_mark(void);
 int print_Integer(int num);
-int print_integer(int num);
 void printString(va_list ag, int *n_c);
 void printInt(va_list ag, int *p_n_c);
 void printChar(va_list ag, int *n_c);
-void printMod(va_list ag, int *n_c);
 #endif
