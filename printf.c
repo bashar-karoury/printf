@@ -62,7 +62,7 @@ static void call_specifier_function(va_list ag, int *p_n_c, char sp)
 		{'s', printString	}
 	};
 
-	for (i = 0; i < 2; i++)
+	for (i = 0; i < 3; i++)
 	{
 		if (sp == specifiers[i].symbol)
 		{
