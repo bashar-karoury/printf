@@ -60,7 +60,11 @@ static void call_specifier_function(const char **format, va_list ag, int *p_n_c,
 		{'d', printInt	   	},
 		{'0', 0			}
 	};
-
+	if (sp == '\0')
+	{
+		*p_n_c = -1;
+		return;
+	}
 	while (specifiers[i].symbol != '0')
 	{
 		if (sp == specifiers[i].symbol)
