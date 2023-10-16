@@ -5,7 +5,7 @@
 void printChar(va_list ag, int *n_c)
 {
 	*n_c += print_c((char)va_arg(ag, int));
-
+	return (void);
 }
 
 /**
@@ -17,4 +17,5 @@ void printChar(va_list ag, int *n_c)
 int print_c(char x)
 {
 	_putchar(x);
+	return (1);
 }
