@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 void printString(va_list ag, int *n_c)
 {	
@@ -25,4 +26,5 @@ int print_string(char *str)
 		_putchar(str[x]);
 		x++;
 	}
+	return (x);
 }
