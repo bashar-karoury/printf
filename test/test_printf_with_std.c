@@ -37,7 +37,7 @@ int main(void)
 	printf("-----------------------------------------------------\n");
 	n1 = _printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', "99", " Please wait", '\n');
 	n2 = printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', "99", " Please wait", '\n');
-	
+	printf("n1 = %d, n2 = %d \n", n1, n2);	
 	printf ("Result = %s\n", (n1 == n2)? "PASS":"FAIL");
 	printf("-----------------------------------------------------\n");
 	n1 = _printf("css%ccs%scscscs", 'T', "Test");
@@ -48,6 +48,7 @@ int main(void)
 	n1 = _putchar('\n');
 	n2 = putchar('\n');
 	
+	printf("n1 = %d, n2 = %d \n", n1, n2);	
 	printf ("Result = %s\n", (n1 == n2)? "PASS":"FAIL");
 	printf("-----------------------------------------------------\n");
 	n1 = _printf(NULL);

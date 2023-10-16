@@ -3,9 +3,11 @@
 
 int main(void)
 {
-	int n_c	= _printf("bashar %i Sirelkhatim   %c", 11, 'A');
-	int n_c_s = printf("bashar %i Sirelkhatim   %c", 11, 'A');
-	printf("\n");
-	printf("standard printf  n_c =  %d \n our printf n_c = %d\n", n_c_s, n_c);
+	int n1,n2;
+
+	n1 = _printf("Negative:[%d]\n", -1);
+	n2 =  printf("Negative:[%d]\n", -1);
+
+	printf("n1 = %d, n2 = %d\n", n1, n2);
 	return (0);
 }
