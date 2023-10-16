@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+
 typedef void (*printFunc)(va_list ag, int *p_n_c);
 
 typedef struct{
@@ -55,20 +56,24 @@ static void call_specifier_function(va_list ag, int *p_n_c, char sp)
 {
 	int i = 0;
 
-	specifier_t specifiers[3] = 
+	const specifier_t specifiers[] = 
 	{
 		{'c', printChar		},
 		{'i', printInt		},
-		{'s', printString	}
+		{'s', printString	},
+		{'d', printInt	   	},
+		{'%', printMod  	},
+		{0	,0				}
 	};
 
-	for (i = 0; i < 3; i++)
+	while (specifiers[i].symbol != 0)
 	{
 		if (sp == specifiers[i].symbol)
 		{
 			specifiers[i].function(ag, p_n_c);
 			break;
 		}
+		i++;
 	}
 
 }
