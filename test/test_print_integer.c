@@ -1,17 +1,22 @@
 #include "../main.h"
+#include <limits.h>
+#include <stdio.h>
 
 int main(void)
 {
-	int num;
-	
-	num = 484;
-	print_Integer(num);
+	printf("minimum value of int using printf:\n%d\n", INT_MIN);
 
-	num = -484;
-	print_Integer(num);
+	printf("minimum value of int using print_integer\n");
 
-	num = 38492;
-	print_Integer(num);
+	print_Integer(INT_MIN);
+
+	printf("\nmaxmum value of int using printf:\n%d\n", INT_MAX);
+
+	printf("maxmum value of int using print_integer\n");
+
+	print_Integer(INT_MAX);
+
+	printf("\n");
 
 	return (0);
 }

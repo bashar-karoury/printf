@@ -16,14 +16,15 @@ void printInt(va_list ag, int *n_c)
 int print_Integer(int num)
 {
 	int numDigits = 0;
-	int temp = num;
+	int temp;
 	char *digits;
 	int i;
-	
+	unsigned int x;
+
 	if (num < 0)
 	{
 		_putchar('-');
-		num = -num;
+		x = -num;
 	}
 
 	if (num == 0)
@@ -31,6 +32,9 @@ int print_Integer(int num)
 		_putchar('0');
 		return (0);
 	}
+
+	x = num;
+	temp = x;
 
 	while (temp != 0)
 	{
@@ -42,8 +46,8 @@ int print_Integer(int num)
 
 	for (i = numDigits - 1; i >= 0; i--)
 	{
-		digits[i] = '0' + (num % 10);
-		num /= 10;
+		digits[i] = '0' + (x % 10);
+		x /= 10;
 	}
 
 	digits[numDigits] = '\0';
