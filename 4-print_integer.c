@@ -1,12 +1,20 @@
 #include "main.h"
 
+
+void printInt(va_list ag, int *n_c)
+{
+	int n = 0;
+	n = print_Integer(va_arg(ag, int));
+
+}
+
 /**
  * print_integer - prints an givan integer
  * @num: given int
  * return: void
  */
 
-void print_Integer(int num) 
+int print_Integer(int num) 
 {
 	if (num < 0)
 	{
