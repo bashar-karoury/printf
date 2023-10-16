@@ -3,9 +3,7 @@
 
 void printInt(va_list ag, int *n_c)
 {
-	int n = 0;
-	n = print_Integer(va_arg(ag, int));
-
+	*n_c += print_Integer(va_arg(ag, int));
 }
 
 /**
