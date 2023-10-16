@@ -17,6 +17,10 @@ int main(void)
 	print_Integer(INT_MAX);
 
 	printf("\n");
+	
+	print_Integer(-1);
 
+	printf("\n");
+	
 	return (0);
 }
