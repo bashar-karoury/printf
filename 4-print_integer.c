@@ -13,11 +13,11 @@ void printInt(va_list ag, int *n_c)
  * return: void
  */
 
-int print_Integer(int num) 
+int print_Integer(int num)
 {
 	int numDigits = 0;
 	int temp = num;
-	char *digits = (char*)malloc((numDigits + 1) * sizeof(char));
+	char *digits;
 	int i;
 	
 	if (num < 0)
@@ -38,7 +38,7 @@ int print_Integer(int num)
 		numDigits++;
 	}
 
-
+	*digits = (char*)malloc((numDigits + 1) * sizeof(char));
 
 	for (i = numDigits - 1; i >= 0; i--)
 	{
@@ -52,6 +52,6 @@ int print_Integer(int num)
 	{
 		_putchar(digits[i]);
 	}
-
 	free(digits);
+	return (numDigits);
 }
