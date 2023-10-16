@@ -1,7 +1,7 @@
-#include "main.h"
+#include "../main.h"
 
 int main(void)
 {
-	print_division_mark();
+	print_modulus_mark();
 	return (0);
 }

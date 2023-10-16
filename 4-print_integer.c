@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 
 void printInt(va_list ag, int *n_c)
@@ -14,6 +15,11 @@ void printInt(va_list ag, int *n_c)
 
 int print_Integer(int num) 
 {
+	int numDigits = 0;
+	int temp = num;
+	char *digits = (char*)malloc((numDigits + 1) * sizeof(char));
+	int i;
+	
 	if (num < 0)
 	{
 		_putchar('-');
@@ -26,18 +32,15 @@ int print_Integer(int num)
 		return;
 	}
 
-	int numDigits = 0;
-	int temp = num;
-
 	while (temp != 0)
 	{
 		temp /= 10;
 		numDigits++;
 	}
 
-	char digits[numDigits + 1];
 
-	for (int i = numDigits - 1; i >= 0; i--)
+
+	for (i = numDigits - 1; i >= 0; i--)
 	{
 		digits[i] = '0' + (num % 10);
 		num /= 10;
@@ -45,8 +48,10 @@ int print_Integer(int num)
 
 	digits[numDigits] = '\0';
 
-	for (int i = 0; i < numDigits; i++)
+	for (i = 0; i < numDigits; i++)
 	{
 		_putchar(digits[i]);
 	}
+
+	free(digits);
 }
