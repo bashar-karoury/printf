@@ -3,11 +3,10 @@
 /**
  * print_c - print the c
  * @x: the input char
- * Return: printed char
+ * Return: void
  */
 
-int print_c(char x)
+void print_c(char x)
 {
 	_putchar(x);
-	return (x);
 }

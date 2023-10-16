@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_division_mark - prints "%"
+ * print_modulus_mark - prints "%"
  * Return: void
  */
 
-int print_division_mark(void)
+int print_modulus_mark(void)
 {
 	_putchar(37);
 	return (0);
