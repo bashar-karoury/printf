@@ -7,6 +7,6 @@
 
 int print_division_mark(void)
 {
-	return (_putchar(37));
-
+	_putchar(37);
+	return (0);
 }
