@@ -20,23 +20,25 @@ void printInt(va_list ag, int *n_c)
 
 int print_Integer(int num)
 {
-	int numDigits = 0;
-	int temp;
+	int numDigits = 0, temp = 0, i = 0, is_negative = 0;
 	char *digits;
-	int i;
 	unsigned int x;
 
 	if (num < 0)
 	{
 		_putchar('-');
 		x = -num;
+		is_negative = 1;
 	}
-	if (num == 0)
+	else if (num == 0)
 	{
 		_putchar('0');
-		return (0);
+		return (1);
 	}
-	x = num;
+	else
+	{
+		x = num;
+	}
 	temp = x;
 	while (temp != 0)
 	{
@@ -57,5 +59,5 @@ int print_Integer(int num)
 		_putchar(digits[i]);
 	}
 	free(digits);
-	return (numDigits);
+	return (numDigits + is_negative);
 }
