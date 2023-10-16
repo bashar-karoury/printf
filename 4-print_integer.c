@@ -29,7 +29,7 @@ int print_Integer(int num)
 	if (num == 0)
 	{
 		_putchar('0');
-		return;
+		return (0);
 	}
 
 	while (temp != 0)
@@ -38,7 +38,7 @@ int print_Integer(int num)
 		numDigits++;
 	}
 
-	*digits = (char*)malloc((numDigits + 1) * sizeof(char));
+	digits = (char*)malloc((numDigits + 1) * sizeof(char));
 
 	for (i = numDigits - 1; i >= 0; i--)
 	{

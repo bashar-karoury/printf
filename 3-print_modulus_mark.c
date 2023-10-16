@@ -3,8 +3,7 @@
 
 void printMod(va_list ag, int *n_c)
 {
-	int n = 0;
-	*n_c += print_modulus_mark((char)va_arg(ag, int));
+	*n_c += print_modulus_mark();
 
 }
 
