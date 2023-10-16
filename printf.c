@@ -25,6 +25,9 @@ int _printf(const char *format, ...)
 {
 	va_list ag;
 	int n_c  = 0;
+	
+	if(format == NULL)
+		return (-1);
 
 	va_start(ag, format);
 	while(print_until_specifier(&format, &(n_c)))
@@ -75,10 +78,10 @@ static void call_specifier_function(const char **format, va_list ag, int *p_n_c,
 
 static int print_until_specifier(const char **format, int *p_n_c)
 {
-	if (**format == '\0')
-		return 0;
 	while(**format != '%')
-	{
+	{	
+	 	if (**format == '\0')
+	 		return 0;
 		*(p_n_c) += print_c(**format);
 		(*format)++;
 	}
