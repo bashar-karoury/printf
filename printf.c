@@ -48,19 +48,18 @@ int *p_n_c, char sp)
 {
 	int i = 0;
 	int specifier_found = 0;
-	const specifier_t specifiers[] = {
+	const specifier_t specifiers[NO_SP] = {
 		{'c', printChar		},
 		{'i', printInt		},
 		{'s', printString	},
 		{'d', printInt		},
-		{'0', 0			}
 	};
 	if (sp == '\0')
 	{
 		*p_n_c = -1;
 		return;
 	}
-	while (specifiers[i].symbol != '0')
+	for (i = 0; i < NO_SP; i++)
 	{
 		if (sp == specifiers[i].symbol)
 		{
@@ -68,7 +67,6 @@ int *p_n_c, char sp)
 			specifier_found = 1;
 			break;
 		}
-		i++;
 	}
 	if (!(specifier_found))
 	{

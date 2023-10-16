@@ -3,6 +3,8 @@
 /* Header files */
 #include <stdarg.h>
 #include <stddef.h>
+/* MACROS */
+#define NO_SP	4
 /* Data types */
 
 typedef void (*printFunc)(va_list ag, int *p_n_c);
