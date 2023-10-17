@@ -5,7 +5,7 @@
 
 static int print_until_specifier(const char **format, int *p_n_c);
 static void call_specifier_function(const char **format, va_list ag,
-	       				int *p_n_c);
+		int *p_n_c);
 /**
  * _printf - function that print data to STDOUT according to format
  * @format: null terminated string that contains text to be printed
@@ -38,7 +38,6 @@ int _printf(const char *format, ...)
  * @format: doc
  * @p_n_c: doc
  * @ag: doc
- * @sp: doc
  * Return: doc
  */
 
@@ -49,17 +48,13 @@ int *p_n_c)
 	int i = 0;
 	int specifier_found = 0;
 	const specifier_t specifiers[NO_SP] = {
-		{'c', printChar		},
-		{'i', printInt		},
-		{'s', printString	},
-		{'d', printInt		},
+		{'c', printChar		}, {'i', printInt		},
+		{'s', printString	}, {'d', printInt		},
 	};
 	(*(format))++;
 
-	while(**format == ' ')
-	{
-		(*(format))++;	
-	}
+	while (**format == ' ')
+		(*(format))++;
 
 	if (**format == '\0')
 	{
