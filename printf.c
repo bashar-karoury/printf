@@ -5,7 +5,7 @@
 
 static int print_until_specifier(const char **format, int *p_n_c);
 static void call_specifier_function(const char **format, va_list ag,
-													int *p_n_c, char sp);
+	       				int *p_n_c);
 /**
  * _printf - function that print data to STDOUT according to format
  * @format: null terminated string that contains text to be printed
@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 	va_start(ag, format);
 	while (print_until_specifier(&format, &(n_c)))
 	{
-		call_specifier_function(&format, ag, &(n_c), *(++format));
+		call_specifier_function(&format, ag, &(n_c));
 	}
 	va_end(ag);
 	return (n_c);
@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 
 
 static void call_specifier_function(const char **format, va_list ag,
-int *p_n_c, char sp)
+int *p_n_c)
 {
 	int i = 0;
 	int specifier_found = 0;
@@ -54,14 +54,21 @@ int *p_n_c, char sp)
 		{'s', printString	},
 		{'d', printInt		},
 	};
-	if (sp == '\0')
+	(*(format))++;
+
+	while(**format == ' ')
+	{
+		(*(format))++;	
+	}
+
+	if (**format == '\0')
 	{
 		*p_n_c = -1;
 		return;
 	}
 	for (i = 0; i < NO_SP; i++)
 	{
-		if (sp == specifiers[i].symbol)
+		if ((**format) == specifiers[i].symbol)
 		{
 			specifiers[i].function(ag, p_n_c);
 			specifier_found = 1;
@@ -70,7 +77,7 @@ int *p_n_c, char sp)
 	}
 	if (!(specifier_found))
 	{
-		if (sp == '%')
+		if (**(format) == '%')
 		{
 			*(p_n_c) += print_c('%');
 		}
