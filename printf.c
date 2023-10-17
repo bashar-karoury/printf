@@ -49,6 +49,7 @@ int *p_n_c)
 	const specifier_t specifiers[NO_SP] = {
 		{'c', printChar		}, {'i', printInt		},
 		{'s', printString	}, {'d', printInt		},
+		{'b', printBinary	}
 	};
 	(*(format))++;
 	while (**format == ' ')
@@ -73,9 +74,7 @@ int *p_n_c)
 	if (!(specifier_found))
 	{
 		if (**(format) == '%')
-		{
 			*(p_n_c) += print_c('%');
-		}
 		else
 		{
 			*(p_n_c) += print_c('%');

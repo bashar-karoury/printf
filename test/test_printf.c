@@ -3,11 +3,10 @@
 
 int main(void)
 {
-	int n1,n2;
+	int n2;
 
-	n1 = _printf("%             %", -1);
-	n2 =  printf("%             %", -1);
+	n2 =  printf("%b", 3);
 
-	printf("n1 = %d, n2 = %d\n", n1, n2);
+	printf("n2 = %d\n", n2);
 	return (0);
 }
