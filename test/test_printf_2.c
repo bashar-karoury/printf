@@ -40,8 +40,8 @@ int main(void)
 	printf("n1 = %d, n2 = %d \n", n1, n2);	
 	printf ("Result = %s\n", (n1 == n2)? "PASS":"FAIL");
 	printf("-----------------------------------------------------\n");
-	n1 = _printf("css%ccs%scscscs", 'T', "Test");
-	n2 = printf("css%ccs%scscscs", 'T', "Test");
+	n1 = _printf("css%ccs%scscscs\n", 'T', "Test");
+	n2 = printf("css%ccs%scscscs\n", 'T', "Test");
 	
 	printf ("Result = %s\n", (n1 == n2)? "PASS":"FAIL");
 	printf("-----------------------------------------------------\n");
