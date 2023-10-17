@@ -37,6 +37,7 @@ int print_string_rot13(char *str);
 int print_un_oc(unsigned int num);
 int print_un_Hex(unsigned int num);
 int print_un_hex(unsigned int num);
+int print_ptr(unsigned int *ptr);
 
 void printString(va_list ag, int *n_c);
 void printStringX(va_list ag, int *n_c);
@@ -49,5 +50,6 @@ void printStringROT13(va_list ag, int *n_c);
 void print_unoc(va_list ag, int *n_c);
 void printHex(va_list ag, int *n_c);
 void printhex(va_list ag, int *n_c);
+void printptr(va_list ag, int *n_c);
 
 #endif
