@@ -24,11 +24,12 @@ int print_ptr(void *ptr)
 	char buffer[20];
 	int index = 0;
 	char null[] = "(nil)";
+	int n = 0;
 
 	if (value == 0)
 	{
-		print_string(null);
-		return (1);
+		n = print_string(null);
+		return (n);
 	}
 
 	_putchar('0');
