@@ -38,7 +38,7 @@ int print_reverse_string(char *str)
 	{
 		x++;
 	}
-	n = x;
+	n = x--;
 	while (x >= 0)
 	{
 		_putchar(str[x]);
