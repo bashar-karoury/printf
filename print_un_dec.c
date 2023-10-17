@@ -20,38 +20,24 @@ void print_undec(va_list ag, unsigned int *n_c)
 
 int print_un_dec(unsigned int num)
 {
-	int numDigits = 0, temp = 0, i = 0, is_negative = 0;
-	char *digits;
-	unsigned int x;
-
 	if (num == 0)
 	{
-		_putchar('0');
+		_putchar('0');  // Special case for zero
 		return (1);
 	}
-	else
-		x = num;
-	temp = x;
-	while (temp != 0)
+
+	char buffer[20];
+	int index = 0;
+
+	while (num > 0)
 	{
-		temp /= 10;
-		numDigits++;
+		buffer[index++] = '0' + (num % 10);
+		num /= 10;
 	}
-	digits = (char *)malloc((numDigits + 1) * sizeof(char));
-	if (digits != NULL)
+
+	for (int i = index - 1; i >= 0; i--)
 	{
-		for (i = numDigits - 1; i >= 0; i--)
-		{
-			digits[i] = '0' + (x % 10);
-			x /= 10;
-		}
-		digits[numDigits] = '\0';
-		for (i = 0; i < numDigits; i++)
-		{
-			_putchar(digits[i]);
-		}
-		free(digits);
-		return (numDigits + is_negative);
+		_putchar(buffer[i]);
 	}
-	return (0);
+	return (index);
 }
