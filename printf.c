@@ -49,7 +49,7 @@ int *p_n_c)
 	const specifier_t specifiers[NO_SP] = {
 		{'c', printChar		}, {'i', printInt		},
 		{'s', printString	}, {'d', printInt		},
-		{'b', printBinary	}
+		{'b', printBinary	}, {'r', printReverseString}
 	};
 	(*(format))++;
 	while (**format == ' ')

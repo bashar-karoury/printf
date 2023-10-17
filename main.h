@@ -4,7 +4,7 @@
 #include <stdarg.h>
 #include <stddef.h>
 /* MACROS */
-#define NO_SP	5
+#define NO_SP	6
 /* Data types */
 
 typedef void (*printFunc)(va_list ag, int *p_n_c);
@@ -31,10 +31,12 @@ int print_string(char *str);
 int print_Integer(int num);
 int print_Binary(unsigned int num);
 int print_un_dec(unsigned int num);
+int print_reverse_string(char *str);
 
 void printString(va_list ag, int *n_c);
 void printInt(va_list ag, int *p_n_c);
 void printChar(va_list ag, int *n_c);
 void printBinary(va_list ag, int *n_c);
 void print_undec(va_list ag, unsigned int *n_c);
+void printReverseString(va_list ag, int *n_c);
 #endif
