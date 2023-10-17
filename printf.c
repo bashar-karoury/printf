@@ -47,6 +47,7 @@ int *p_n_c)
 {
 	int i = 0;
 	int specifier_found = 0;
+	int space = 0;
 	const specifier_t specifiers[NO_SP] = {
 		{'c', printChar		}, {'i', printInt		},
 		{'s', printString	}, {'d', printInt		},
@@ -54,7 +55,10 @@ int *p_n_c)
 	(*(format))++;
 
 	while (**format == ' ')
+	{
 		(*(format))++;
+		space = 1;
+	}
 
 	if (**format == '\0')
 	{
@@ -79,6 +83,8 @@ int *p_n_c)
 		else
 		{
 			*(p_n_c) += print_c('%');
+			if (space)
+				*(p_n_c) += print_c(' ');
 			*(p_n_c) += print_c(**format);
 		}
 	}

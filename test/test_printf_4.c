@@ -30,13 +30,22 @@ int main(void)
 	printf("n1 = [%d], n2 = [%d]\n", n1, n2);
 	printf("RESULT = %s\n" ,(n1 == n2)? "PASS":"FAIL");
 	printf("\n-------------------------------\n");
-	n1 = _printf("%          k           k", NULL);
+	n1 = _printf("%          r           r", NULL);
 	printf("\n-------------------------------\n");
-	n2 =  printf("%          k           k", NULL);
+	n2 =  printf("%          r           r", NULL);
+	printf("\n-------------------------------\n");
+	printf("n1 = [%d], n2 = [%d]\n", n1, n2);
+	printf("RESULT = %s\n" ,(n1 == n2)? "PASS":"FAIL");
+	printf("\n-------------------------------\n");
+	n1 = _printf("%r           r", NULL);
+	printf("\n-------------------------------\n");
+	n2 =  printf("%r           r", NULL);
 	printf("\n-------------------------------\n");
 	printf("n1 = [%d], n2 = [%d]\n", n1, n2);
 	printf("RESULT = %s\n" ,(n1 == n2)? "PASS":"FAIL");
 	
+
+
 
 	return (0);
 
