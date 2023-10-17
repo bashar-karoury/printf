@@ -2,23 +2,23 @@
 #include <stdlib.h>
 
 /**
- * print_undec - doc
+ * print_unoc - doc
  * @ag: doc
  * @n_c: doc
  */
 
-void print_undec(va_list ag, unsigned int *n_c)
+void print_unoc(va_list ag, unsigned int *n_c)
 {
-	*n_c += print_un_dec(va_arg(ag, int));
+	*n_c += print_un_oc(va_arg(ag, int));
 }
 
 /**
- * print_un_dec - prints an givan integer
+ * print_un_oc - prints an givan integer
  * @num: given int
  * Return: integer length
  */
 
-int print_un_dec(unsigned int num)
+int print_un_oc(unsigned int num)
 {
 	if (num == 0)
 	{
@@ -31,8 +31,8 @@ int print_un_dec(unsigned int num)
 
 	while (num > 0)
 	{
-		buffer[index++] = '0' + (num % 10);
-		num /= 10;
+		buffer[index++] = '0' + (num % 8);
+		num /= 8;
 	}
 
 	for (int i = index - 1; i >= 0; i--)
