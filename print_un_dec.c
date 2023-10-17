@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * printInt - doc
+ * print_undec - doc
  * @ag: doc
  * @n_c: doc
  */
@@ -13,7 +13,7 @@ void print_undec(va_list ag, unsigned int *n_c)
 }
 
 /**
- * print_Integer - prints an givan integer
+ * print_un_dec - prints an givan integer
  * @num: given int
  * Return: integer length
  */
