@@ -50,7 +50,7 @@ int *p_n_c)
 		{'c', printChar	}, {'i', printInt}, {'s', printString}, {'d', printInt},
 		{'b', printBinary}, {'r', printReverseString}, {'S', printStringX},
 		{'R', printStringROT13}, {'u', print_undec}, {'o', print_unoc},
-		{'x', printhex}, {'X', printHex}
+		{'x', printhex}, {'X', printHex}, {'p', printptr}
 	};
 	(*(format))++;
 	while (**format == ' ')

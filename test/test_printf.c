@@ -3,20 +3,14 @@
 
 int main(void)
 {
-	int n2;
-	n2 = _printf("%R","Why did the chicken cross the road?");
-	_printf("\n%d\n", n2);
+	int n1;
+	int n;
+	int n2 = 0;
 
-	printf("n2 = %d\n", n2);
+	n1 = _printf("%p",&n);
+	n2 = printf("%p", &n);
 
-    n2 =  printf("%h", 3);
+	_printf("\n%d --- %d\n",n1, n2);
 
-    printf("n2 = %d\n", n2);
-
-
-
-    n2 =  printf("%+hhhh\n", 3);
-
-    printf("n2 = %d\n", n2);
 	return (0);
 }

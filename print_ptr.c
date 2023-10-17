@@ -8,7 +8,7 @@
 
 void printptr(va_list ag, int *n_c)
 {
-	*n_c += print_ptr(va_arg(ag, unsigned int *));
+	*n_c += print_ptr(va_arg(ag, void *));
 }
 
 /**
@@ -17,9 +17,9 @@ void printptr(va_list ag, int *n_c)
  * Return: length
  */
 
-int print_ptr(unsigned int *ptr)
+int print_ptr(void *ptr)
 {
-	unsigned long value = (unsigned long)ptr;
+	unsigned long int value = (unsigned long int)ptr;
 	int remainder, i;
 	char buffer[20];
 	int index = 0;
@@ -51,5 +51,5 @@ int print_ptr(unsigned int *ptr)
 		_putchar(buffer[i]);
 	}
 
-	return (index);
+	return (index + 2);
 }
