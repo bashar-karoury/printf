@@ -10,11 +10,16 @@
 void printString(va_list ag, int *n_c)
 {
 	char *str = NULL;
+	char null[] = "(null)";
 
 	str = va_arg(ag, char *);
 	if (str != NULL)
 	{
 		*n_c += print_string(str);
+	}
+	else
+	{
+		*n_c += print_string(null);
 	}
 }
 
