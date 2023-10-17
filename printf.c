@@ -50,7 +50,7 @@ int *p_n_c)
 		{'c', printChar		}, {'i', printInt		},
 		{'s', printString	}, {'d', printInt		},
 		{'b', printBinary	}, {'r', printReverseString},
-		{'S', printStringX}
+		{'S', printStringX}, {'R', printStringROT13}
 	};
 	(*(format))++;
 	while (**format == ' ')

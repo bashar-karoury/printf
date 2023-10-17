@@ -2,7 +2,7 @@
 #include <stddef.h>
 
 /**
- * printString - doc
+ * printReverseString - doc
  * @ag: doc
  * @n_c: doc
  */
@@ -24,7 +24,7 @@ void printReverseString(va_list ag, int *n_c)
 }
 
 /**
- * print_string - print given string
+ * print_reverse_string - print given string
  * @str: given string
  * Return: void
  */
@@ -40,7 +40,7 @@ int print_reverse_string(char *str)
 	}
 	n = x;
 	while (x >= 0)
-	{	
+	{
 		_putchar(str[x]);
 		x--;
 	}

@@ -4,8 +4,8 @@
 int main(void)
 {
 	int n2;
-
-	n2 =  _printf("%r", "rahsab");
+	n2 = _printf("%R","ABCDEF");
+	_printf("\n%d\n", n2);
 
 	printf("n2 = %d\n", n2);
 
