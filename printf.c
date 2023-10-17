@@ -45,21 +45,17 @@ int _printf(const char *format, ...)
 static void call_specifier_function(const char **format, va_list ag,
 int *p_n_c)
 {
-	int i = 0;
-	int specifier_found = 0;
-	int space = 0;
+	int i = 0, specifier_found = 0, space = 0;
 	const specifier_t specifiers[NO_SP] = {
 		{'c', printChar		}, {'i', printInt		},
 		{'s', printString	}, {'d', printInt		},
 	};
 	(*(format))++;
-
 	while (**format == ' ')
 	{
 		(*(format))++;
 		space = 1;
 	}
-
 	if (**format == '\0')
 	{
 		*p_n_c = -1;
@@ -89,7 +85,6 @@ int *p_n_c)
 		}
 	}
 	 (*format)++;
-
 }
 
 /**
