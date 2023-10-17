@@ -7,7 +7,7 @@
  * @n_c: doc
  */
 
-void print_unoc(va_list ag, unsigned int *n_c)
+void print_unoc(va_list ag, int *n_c)
 {
 	*n_c += print_un_oc(va_arg(ag, int));
 }
@@ -20,22 +20,22 @@ void print_unoc(va_list ag, unsigned int *n_c)
 
 int print_un_oc(unsigned int num)
 {
+	char buffer[20];
+	int index = 0;
+	int i;
+
 	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-
-	char buffer[20];
-	int index = 0;
-
 	while (num > 0)
 	{
 		buffer[index++] = '0' + (num % 8);
 		num /= 8;
 	}
 
-	for (int i = index - 1; i >= 0; i--)
+	for (i = index - 1; i >= 0; i--)
 	{
 		_putchar(buffer[i]);
 	}

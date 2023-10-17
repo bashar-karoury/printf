@@ -47,10 +47,10 @@ int *p_n_c)
 {
 	int i = 0, specifier_found = 0, space = 0;
 	const specifier_t specifiers[NO_SP] = {
-		{'c', printChar		}, {'i', printInt		},
-		{'s', printString	}, {'d', printInt		},
-		{'b', printBinary	}, {'r', printReverseString},
-		{'S', printStringX}, {'R', printStringROT13}
+		{'c', printChar	}, {'i', printInt}, {'s', printString}, {'d', printInt},
+		{'b', printBinary}, {'r', printReverseString}, {'S', printStringX},
+		{'R', printStringROT13}, {'u', print_undec}, {'o', print_unoc},
+		{'x', printhex}, {'X', printHex}
 	};
 	(*(format))++;
 	while (**format == ' ')

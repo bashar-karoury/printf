@@ -31,7 +31,9 @@ void printhex(va_list ag, int *n_c)
 
 int print_un_Hex(unsigned int num)
 {
-	int remainder;
+	int remainder, i;
+	int index = 0;
+	char buffer[20];
 
 	if (num == 0)
 	{
@@ -39,8 +41,6 @@ int print_un_Hex(unsigned int num)
 		return (1);
 	}
 
-	char buffer[20];
-	int index = 0;
 
 	while (num > 0)
 	{
@@ -56,7 +56,7 @@ int print_un_Hex(unsigned int num)
 		num /= 16;
 	}
 
-	for (int i = index - 1; i >= 0; i--)
+	for (i = index - 1; i >= 0; i--)
 	{
 		_putchar(buffer[i]);
 	}
@@ -72,17 +72,15 @@ int print_un_Hex(unsigned int num)
 
 int print_un_hex(unsigned int num)
 {
-	int remainder;
+	int remainder, i;
+	char buffer[20];
+	int index = 0;
 
 	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-
-	char buffer[20];
-	int index = 0;
-
 	while (num > 0)
 	{
 		remainder = num % 16;
@@ -97,7 +95,7 @@ int print_un_hex(unsigned int num)
 		num /= 16;
 	}
 
-	for (int i = index - 1; i >= 0; i--)
+	for (i = index - 1; i >= 0; i--)
 	{
 		_putchar(buffer[i]);
 	}
