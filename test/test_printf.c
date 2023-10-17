@@ -4,7 +4,7 @@
 int main(void)
 {
 	int n2;
-	n2 = _printf("%R","ABCDEF");
+	n2 = _printf("%R","Why did the chicken cross the road?");
 	_printf("\n%d\n", n2);
 
 	printf("n2 = %d\n", n2);
