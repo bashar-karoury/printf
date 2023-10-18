@@ -19,7 +19,7 @@ void printptr(va_list ag, int *n_c)
 
 int print_ptr(unsigned int *ptr)
 {
-	unsigned long long value = (unsigned long long)ptr;
+	unsigned long value = (unsigned long)ptr;
 	int remainder, i;
 	char buffer[20];
 	int index = 0;
