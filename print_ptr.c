@@ -23,15 +23,17 @@ int print_ptr(void *ptr)
 	int remainder, i;
 	char buffer[20];
 	int index = 0;
+	char null[] = "(nil)";
 
-	_putchar('0');
-	_putchar('x');
 	if (value == 0)
 	{
-		_putchar('0');
+		print_string(null);
 		return (1);
 	}
 
+	_putchar('0');
+	_putchar('x');
+	
 	while (value > 0)
 	{
 		remainder = value % 16;
