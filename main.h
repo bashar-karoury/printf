@@ -66,5 +66,5 @@ void printhex(va_list ag, int *n_c, flags_t *flags);
 void printptr(va_list ag, int *n_c, flags_t *flags);
 
 
-void print_with_flags(char *data, flags_t *flags);
+void print_with_flags(char *data,int *n_c, flags_t *flags);
 #endif
