@@ -32,11 +32,32 @@ void printString(va_list ag, int *n_c, flags_t *flags)
 int print_string(char *str, flags_t *flags)
 {
 	int x = 0;
+	int len = 0;
+	int n = 0; 
+	char *data = NULL;
 
+	len = string_len(str);
+	data = malloc(len);
+	if (data == NULL)
+	{	
+		return (0);
+	}	
 	while (str[x] != '\0')
 	{
-		_putchar(str[x]);
+		data[x] = str[x];
 		x++;
 	}
-	return (x);
+	
+		// Call omer function
+	n = fsfasfsAS();
+	return (n);
+}
+
+int string_len(char *s)
+{
+	int idx = 0;
+
+	while (s[idx] != '\0')
+		idx++;
+	return (idx);
 }

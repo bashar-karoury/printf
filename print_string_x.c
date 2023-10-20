@@ -9,6 +9,7 @@
 * Return: number of characters printed
 */
 static int print_h(char c, flags_t *flags);
+
 /**
  * printStringX - doc
  * @ag: doc
@@ -41,21 +42,35 @@ int print_string_x(char *str, flags_t *flags)
 {
 	int x = 0;
 	int n = 0;
+	int len = 0;
+	char *data = NULL;
+	int idx = 0;
 
+	len = string_len(str);
+	data = malloc(len * 4); 
+	if(data == NULL)
+	{
+		return 0;
+	}
 	while (str[x] != '\0')
 	{
 		if ((str[x] < 32) || (str[x] >= 127))
-		{
-			n += print_c('\\', flags);
-			n += print_c('x', flags);
-			n += print_h(str[x], flags);
+		{	
+			data[idx++] = '\\';
+			data[idx++] = 'x';
+			convert_h(str[x], &data[idx]);
+			idx += 2;
 		}
 		else
-		{
-			n += print_c(str[x], flags);
+		{	
+			data[idx++] = str[x];
 		}
 		x++;
 	}
+
+	//Call omer function
+	
+	free(data);
 	return (n);
 }
 
@@ -65,7 +80,7 @@ int print_string_x(char *str, flags_t *flags)
 *
 * Return: number of characters printed
 */
-static int print_h(char c, flags_t *flags)
+static void convert_h(char c, char *data)
 {
 	char hi = 0;
 	char lo = 0;
@@ -75,7 +90,6 @@ static int print_h(char c, flags_t *flags)
 				 'A', 'B', 'C', 'D', 'E', 'F'};
 	hi = ((c >> 4) & 0x0F);
 	lo = (c & 0xF);
-	n += print_c(S[(int)hi], flags);
-	n += print_c(S[(int)lo], flags);
-	return (n);
+	data[0] = S[(int)hi];
+	data[1] = S[(int)lo];
 }

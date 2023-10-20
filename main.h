@@ -72,4 +72,5 @@ void printptr(va_list ag, int *n_c, flags_t *flags);
 
 void print_with_flags(char *data,int *n_c, flags_t *flags);
 int print_char(char c);
+int string_len(char *s);
 #endif

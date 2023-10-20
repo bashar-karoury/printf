@@ -24,21 +24,32 @@ int print_Binary(unsigned int num, flags_t *flags)
 	int first_one = 0;
 	int temp = 0;
 	int n = 0;
+	char data[32] = {0};
+	int data_len = 0;
 
-	for (i = 31; i >= 0; i--)
+	if (num == 0)
 	{
-		temp = ((num >> i) & (0x01));
-		if (temp)
+		data_len = 1;		
+	}
+	else 
+	{
+		for (i = 31; i >= 0; i--)
 		{
-			first_one = 1;
-		}
-		if (first_one)
-		{
-			n += print_c(temp + '0', flags);
+			temp = ((num >> i) & (0x01));
+			if (temp)
+			{
+				first_one = 1;
+			}
+			if (first_one)
+			{	
+				data[31 - i] = temp + '0';
+				data_len++;
+				n += print_c(temp + '0', flags);
+			}
 		}
 	}
-	if (!(first_one))
-		n += print_c('0', flags);
+	//--------- Call Omer PrintWithWidth----------//
+	n  =   ----- (data , data_len, flags);	
 
 	return (n);
 }
