@@ -48,8 +48,7 @@ int print_Binary(unsigned int num, flags_t *flags)
 			}
 		}
 	}
-	//--------- Call Omer PrintWithWidth----------//
-	n  =   ----- (data , data_len, flags);	
-
+    n = check_width_and_print(data, data_len, flags);
+   
 	return (n);
 }

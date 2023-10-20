@@ -8,8 +8,7 @@
 *
 * Return: number of characters printed
 */
-static int print_h(char c, flags_t *flags);
-
+static void convert_h(char c, char *data);
 /**
  * printStringX - doc
  * @ag: doc
@@ -68,8 +67,7 @@ int print_string_x(char *str, flags_t *flags)
 		x++;
 	}
 
-	//Call omer function
-	
+	n =  check_width_and_print(data, idx, flags);
 	free(data);
 	return (n);
 }

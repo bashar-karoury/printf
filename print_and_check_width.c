@@ -5,7 +5,7 @@
  *
  */
 
-void print_output(char *out_put)
+void print_output(char *output)
 {
 	int count;
 
@@ -15,25 +15,19 @@ void print_output(char *out_put)
 	}
 }
 
-int check_wi_and_print(char *output, int outputlength,
-					int flagwidth, flags_t *flags)
+int check_width_and_print(char *output, int outputlength, flags_t *flags)
 {
-	int flowwidth = (flagwidth - outputlength);
+	int flowwidth = (flags->width - outputlength);
 	int xyz = flowwidth;
+	int len = 0;
 
-	if (flags->width == 1 && flowwidth > 0)
+	if (flowwidth > 0)
 	{
 		if (flags->justify == 1)
 		{
-			print_output(*output);
+			print_output(output);
 			while (xyz > 0)
 			{
-				if (flags->zerofilled == 1)
-					_putchar('0');
-
-				else
-					_putchar(' ');
-
 				xyz--;
 			}
 		}
@@ -41,20 +35,17 @@ int check_wi_and_print(char *output, int outputlength,
 		{
 			while (xyz > 0)
 			{
-				if (flags->zerofilled == 1)
-					_putchar('0');
-
-				else
-					_putchar(' ');
-
+				_putchar(' ');
 				xyz--;
 			}
-			print_output(*output);
+			print_output(output);
 		}
+		len = flags->width;
 	}
 	else
 	{
-		print_output(*output);
+		print_output(output);
+		len = outputlength;
 	}
-	return (outputlength + flagwidth);
+	return (len);
 }

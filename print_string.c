@@ -47,9 +47,9 @@ int print_string(char *str, flags_t *flags)
 		data[x] = str[x];
 		x++;
 	}
-	
-		// Call omer function
-	n = fsfasfsAS();
+
+    n = check_width_and_print(data, x, flags);
+    free(data);
 	return (n);
 }
 
