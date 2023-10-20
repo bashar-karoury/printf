@@ -68,6 +68,7 @@ void print_unoc(va_list ag, int *n_c, flags_t *flags);
 void printHex(va_list ag, int *n_c, flags_t *flags);
 void printhex(va_list ag, int *n_c, flags_t *flags);
 void printptr(va_list ag, int *n_c, flags_t *flags);
+int check_wi_and_print(char *output, int outputlength,int flagwidth, flags_t *flags);
 
 
 void print_with_flags(char *data,int *n_c, flags_t *flags);
