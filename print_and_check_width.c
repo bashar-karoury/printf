@@ -15,7 +15,8 @@ void print_output(char *out_put)
 	}
 }
 
-int check_wi_and_print(char *output, int outputlength,int flagwidth, flags_t *flags)
+int check_wi_and_print(char *output, int outputlength,
+					int flagwidth, flags_t *flags)
 {
 	int flowwidth = (flagwidth - outputlength);
 	int xyz = flowwidth;
@@ -34,8 +35,8 @@ int check_wi_and_print(char *output, int outputlength,int flagwidth, flags_t *fl
 					_putchar(' ');
 
 				xyz--;
-			}	
-	       	}
+			}
+		}
 		else
 		{
 			while (xyz > 0)
@@ -55,4 +56,5 @@ int check_wi_and_print(char *output, int outputlength,int flagwidth, flags_t *fl
 	{
 		print_output(*output);
 	}
+	return (outputlength + flagwidth);
 }
