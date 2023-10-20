@@ -7,7 +7,7 @@
  * @n_c: doc
  */
 
-void printReverseString(va_list ag, int *n_c)
+void printReverseString(va_list ag, int *n_c, flags_t *flags)
 {
 	char *str = NULL;
 	char null[] = "(null)";
@@ -15,11 +15,11 @@ void printReverseString(va_list ag, int *n_c)
 	str = va_arg(ag, char *);
 	if (str != NULL)
 	{
-		*n_c += print_reverse_string(str);
+		*n_c += print_reverse_string(str, flags);
 	}
 	else
 	{
-		*n_c += print_string(null);
+		*n_c += print_string(null, flags);
 	}
 }
 
@@ -29,7 +29,7 @@ void printReverseString(va_list ag, int *n_c)
  * Return: void
  */
 
-int print_reverse_string(char *str)
+int print_reverse_string(char *str, flags_t *flags)
 {
 	int x = 0;
 	int n = 0;

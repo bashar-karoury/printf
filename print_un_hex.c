@@ -7,9 +7,9 @@
  * @n_c: doc
  */
 
-void printHex(va_list ag, int *n_c)
+void printHex(va_list ag, int *n_c, flags_t *flags)
 {
-	*n_c += print_un_Hex(va_arg(ag, int));
+	*n_c += print_un_Hex(va_arg(ag, int), flags);
 }
 
 /**
@@ -18,9 +18,9 @@ void printHex(va_list ag, int *n_c)
  * @n_c: doc
  */
 
-void printhex(va_list ag, int *n_c)
+void printhex(va_list ag, int *n_c, flags_t *flags)
 {
-	*n_c += print_un_hex(va_arg(ag, int));
+	*n_c += print_un_hex(va_arg(ag, int), flags);
 }
 
 /**
@@ -29,7 +29,7 @@ void printhex(va_list ag, int *n_c)
  * Return: integer length
  */
 
-int print_un_Hex(unsigned int num)
+int print_un_Hex(unsigned int num, flags_t *flags)
 {
 	int remainder, i;
 	int index = 0;
@@ -70,7 +70,7 @@ int print_un_Hex(unsigned int num)
  * Return: integer length
  */
 
-int print_un_hex(unsigned int num)
+int print_un_hex(unsigned int num, flags_t *flags)
 {
 	int remainder, i;
 	char buffer[20];

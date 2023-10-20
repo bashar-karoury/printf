@@ -7,6 +7,19 @@
 #define NO_SP	13
 /* Data types */
 
+struct flags
+{
+	int justify;
+	int zerofilled;
+	int plus;
+	int space;
+	int hash;
+	int width;
+	int len_mod;
+};
+typedef struct flags flags_t;
+
+
 typedef void (*printFunc)(va_list ag, int *p_n_c, flags_t *flags);
 
 /**
@@ -24,17 +37,8 @@ struct specifier
 typedef struct specifier specifier_t;
 
 
-struct flags
-{
-	int justify;
-	int zerofilled;
-	int plus;
-	int space;
-	int hash;
-	int width;
-	int len_mod;
-};
-typedef struct flags flags_t;
+
+
 
 /* Declarations */
 int _printf(const char *format, ...);
@@ -67,4 +71,5 @@ void printptr(va_list ag, int *n_c, flags_t *flags);
 
 
 void print_with_flags(char *data,int *n_c, flags_t *flags);
+int print_char(char c);
 #endif

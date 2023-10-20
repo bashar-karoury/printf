@@ -8,14 +8,14 @@
 *
 * Return: number of characters printed
 */
-static int print_h(char c);
+static int print_h(char c, flags_t *flags);
 /**
  * printStringX - doc
  * @ag: doc
  * @n_c: doc
  */
 
-void printStringX(va_list ag, int *n_c)
+void printStringX(va_list ag, int *n_c, flags_t *flags)
 {
 	char *str = NULL;
 	char null[] = "(null)";
@@ -23,11 +23,11 @@ void printStringX(va_list ag, int *n_c)
 	str = va_arg(ag, char *);
 	if (str != NULL)
 	{
-		*n_c += print_string_x(str);
+		*n_c += print_string_x(str, flags);
 	}
 	else
 	{
-		*n_c += print_string(null);
+		*n_c += print_string(null, flags);
 	}
 }
 
@@ -37,7 +37,7 @@ void printStringX(va_list ag, int *n_c)
  * Return: void
  */
 
-int print_string_x(char *str)
+int print_string_x(char *str, flags_t *flags)
 {
 	int x = 0;
 	int n = 0;
@@ -46,13 +46,13 @@ int print_string_x(char *str)
 	{
 		if ((str[x] < 32) || (str[x] >= 127))
 		{
-			n += print_c('\\');
-			n += print_c('x');
-			n += print_h(str[x]);
+			n += print_c('\\', flags);
+			n += print_c('x', flags);
+			n += print_h(str[x], flags);
 		}
 		else
 		{
-			n += print_c(str[x]);
+			n += print_c(str[x], flags);
 		}
 		x++;
 	}
@@ -65,7 +65,7 @@ int print_string_x(char *str)
 *
 * Return: number of characters printed
 */
-static int print_h(char c)
+static int print_h(char c, flags_t *flags)
 {
 	char hi = 0;
 	char lo = 0;
@@ -75,7 +75,7 @@ static int print_h(char c)
 				 'A', 'B', 'C', 'D', 'E', 'F'};
 	hi = ((c >> 4) & 0x0F);
 	lo = (c & 0xF);
-	n += print_c(S[(int)hi]);
-	n += print_c(S[(int)lo]);
+	n += print_c(S[(int)hi], flags);
+	n += print_c(S[(int)lo], flags);
 	return (n);
 }

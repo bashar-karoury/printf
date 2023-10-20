@@ -7,9 +7,9 @@
  * @n_c: doc
  */
 
-void printBinary(va_list ag, int *n_c)
+void printBinary(va_list ag, int *n_c, flags_t *flags)
 {
-	*n_c += print_Binary(va_arg(ag, unsigned int));
+	*n_c += print_Binary(va_arg(ag, unsigned int), flags);
 }
 
 /**
@@ -18,7 +18,7 @@ void printBinary(va_list ag, int *n_c)
  * Return: integer length
  */
 
-int print_Binary(unsigned int num)
+int print_Binary(unsigned int num, flags_t *flags)
 {
 	int i = 0;
 	int first_one = 0;
@@ -34,11 +34,11 @@ int print_Binary(unsigned int num)
 		}
 		if (first_one)
 		{
-			n += print_c(temp + '0');
+			n += print_c(temp + '0', flags);
 		}
 	}
 	if (!(first_one))
-		n += print_c('0');
+		n += print_c('0', flags);
 
 	return (n);
 }

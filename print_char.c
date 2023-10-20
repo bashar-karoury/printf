@@ -6,9 +6,9 @@
  * @n_c: doc
  */
 
-void printChar(va_list ag, int *n_c)
+void printChar(va_list ag, int *n_c, flags_t *flags)
 {
-	*n_c += print_c((char)va_arg(ag, int));
+	*n_c += print_c((char)va_arg(ag, int), flags);
 }
 
 /**
@@ -17,7 +17,7 @@ void printChar(va_list ag, int *n_c)
  * Return: void
  */
 
-int print_c(char x)
+int print_c(char x, flags_t *flags)
 {
 	_putchar(x);
 	return (1);

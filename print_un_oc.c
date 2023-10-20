@@ -7,9 +7,9 @@
  * @n_c: doc
  */
 
-void print_unoc(va_list ag, int *n_c)
+void print_unoc(va_list ag, int *n_c, flags_t *flags)
 {
-	*n_c += print_un_oc(va_arg(ag, int));
+	*n_c += print_un_oc(va_arg(ag, int), flags);
 }
 
 /**
@@ -18,7 +18,7 @@ void print_unoc(va_list ag, int *n_c)
  * Return: integer length
  */
 
-int print_un_oc(unsigned int num)
+int print_un_oc(unsigned int num, flags_t *flags)
 {
 	char buffer[20];
 	int index = 0;

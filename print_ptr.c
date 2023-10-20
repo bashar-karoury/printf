@@ -6,9 +6,9 @@
  * @n_c: doc
  */
 
-void printptr(va_list ag, int *n_c)
+void printptr(va_list ag, int *n_c, flags_t *flags)
 {
-	*n_c += print_ptr(va_arg(ag, void *));
+	*n_c += print_ptr(va_arg(ag, void *), flags);
 }
 
 /**
@@ -17,7 +17,7 @@ void printptr(va_list ag, int *n_c)
  * Return: length
  */
 
-int print_ptr(void *ptr)
+int print_ptr(void *ptr, flags_t *flags)
 {
 	unsigned long int value = (unsigned long int)ptr;
 	int remainder, i;
@@ -28,7 +28,7 @@ int print_ptr(void *ptr)
 
 	if (value == 0)
 	{
-		n = print_string(null);
+		n = print_string(null, flags);
 		return (n);
 	}
 

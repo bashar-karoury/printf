@@ -7,9 +7,9 @@
  * @n_c: doc
  */
 
-void printInt(va_list ag, int *n_c)
+void printInt(va_list ag, int *n_c, flags_t *flags)
 {
-	*n_c += print_Integer(va_arg(ag, int));
+	*n_c += print_Integer(va_arg(ag, int), flags);
 }
 
 /**
@@ -18,7 +18,7 @@ void printInt(va_list ag, int *n_c)
  * Return: integer length
  */
 
-int print_Integer(int num)
+int print_Integer(int num, flags_t *flags)
 {
 	int numDigits = 0, temp = 0, i = 0, is_negative = 0;
 	char *digits;
