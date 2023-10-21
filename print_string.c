@@ -52,12 +52,3 @@ int print_string(char *str, flags_t *flags)
     free(data);
 	return (n);
 }
-
-int string_len(char *s)
-{
-	int idx = 0;
-
-	while (s[idx] != '\0')
-		idx++;
-	return (idx);
-}

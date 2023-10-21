@@ -33,16 +33,25 @@ int print_reverse_string(char *str, flags_t *flags)
 {
 	int x = 0;
 	int n = 0;
+	int len = 0;
+	char *data = NULL;
+	int i = 0;
 
 	while (str[x] != '\0')
 	{
 		x++;
 	}
 	n = x--;
-	while (x >= 0)
+	data = (char *)malloc(n);
+	if (data != NULL)
 	{
-		_putchar(str[x]);
-		x--;
+		while (x >= 0)
+		{	
+			data[i] = str[x];
+			x--;
+			i++;
+		}
+		len = check_width_and_print(data, n, flags);
 	}
-	return (n);
+	return (len);
 }

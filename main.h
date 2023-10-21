@@ -71,10 +71,12 @@ void printhex(va_list ag, int *n_c, flags_t *flags);
 void printptr(va_list ag, int *n_c, flags_t *flags);
 
 int check_width_and_print(char *output, int outputlength, flags_t *flags);
-void print_output(char *output);
+void print_output(char *output, int len);
 
 
 void print_with_flags(char *data,int *n_c, flags_t *flags);
 int print_char(char c);
+
 int string_len(char *s);
+char *AddCharBeforeString(char *src, char ch, int n);
 #endif

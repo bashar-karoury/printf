@@ -1,0 +1,36 @@
+../print_char.c: In function ‘print_c’:
+../print_char.c:20:30: warning: unused parameter ‘flags’ [-Wunused-parameter]
+   20 | int print_c(char x, flags_t *flags)
+      |                     ~~~~~~~~~^~~~~
+../print_integer.c: In function ‘print_Integer’:
+../print_integer.c:50:3: error: expected ‘}’ before ‘else’
+   50 |   else if (flags->space == 1)
+      |   ^~~~
+../print_reverse_string.c: In function ‘print_reverse_string’:
+../print_reverse_string.c:32:46: warning: unused parameter ‘flags’ [-Wunused-parameter]
+   32 | int print_reverse_string(char *str, flags_t *flags)
+      |                                     ~~~~~~~~~^~~~~
+../print_string_rot13.c: In function ‘print_string_rot13’:
+../print_string_rot13.c:32:44: warning: unused parameter ‘flags’ [-Wunused-parameter]
+   32 | int print_string_rot13(char *str, flags_t *flags)
+      |                                   ~~~~~~~~~^~~~~
+../print_string_x.c: In function ‘convert_h’:
+../print_string_x.c:85:6: warning: unused variable ‘n’ [-Wunused-variable]
+   85 |  int n = 0;
+      |      ^
+../print_un_dec.c: In function ‘print_un_dec’:
+../print_un_dec.c:21:45: warning: unused parameter ‘flags’ [-Wunused-parameter]
+   21 | int print_un_dec(unsigned int num, flags_t *flags)
+      |                                    ~~~~~~~~~^~~~~
+../print_un_hex.c: In function ‘print_un_Hex’:
+../print_un_hex.c:32:45: warning: unused parameter ‘flags’ [-Wunused-parameter]
+   32 | int print_un_Hex(unsigned int num, flags_t *flags)
+      |                                    ~~~~~~~~~^~~~~
+../print_un_hex.c: In function ‘print_un_hex’:
+../print_un_hex.c:73:45: warning: unused parameter ‘flags’ [-Wunused-parameter]
+   73 | int print_un_hex(unsigned int num, flags_t *flags)
+      |                                    ~~~~~~~~~^~~~~
+../print_un_oc.c: In function ‘print_un_oc’:
+../print_un_oc.c:21:44: warning: unused parameter ‘flags’ [-Wunused-parameter]
+   21 | int print_un_oc(unsigned int num, flags_t *flags)
+      |                                   ~~~~~~~~~^~~~~

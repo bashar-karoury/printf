@@ -5,11 +5,11 @@
  *
  */
 
-void print_output(char *output)
+void print_output(char *output, int len)
 {
 	int count;
 
-	for (count = 0; output[count] != '\0'; count++)
+	for (count = 0; count < len; count++)
 	{
 		_putchar(output[count]);
 	}
@@ -25,7 +25,7 @@ int check_width_and_print(char *output, int outputlength, flags_t *flags)
 	{
 		if (flags->justify == 1)
 		{
-			print_output(output);
+			print_output(output, outputlength);
 			while (xyz > 0)
 			{
 				xyz--;
@@ -38,13 +38,13 @@ int check_width_and_print(char *output, int outputlength, flags_t *flags)
 				_putchar(' ');
 				xyz--;
 			}
-			print_output(output);
+			print_output(output, outputlength);
 		}
 		len = flags->width;
 	}
 	else
 	{
-		print_output(output);
+		print_output(output, outputlength);
 		len = outputlength;
 	}
 	return (len);
